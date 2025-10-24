@@ -14,7 +14,6 @@ public class Database extends HttpServlet {
     public void init() throws ServletException {
         super.init();
         try {
-            // Load SQLite driver
             Class.forName("org.sqlite.JDBC");
 
             // Read DB path from environment variable
@@ -23,7 +22,6 @@ public class Database extends HttpServlet {
                 throw new ServletException("Environment variable DB_PATH is not set!");
             }
 
-            // Connect to SQLite
             conn = DriverManager.getConnection("jdbc:sqlite:" + dbPath);
             System.out.println("Connected to SQLite successfully via ENV variable: " + dbPath);
 
@@ -50,11 +48,9 @@ public class Database extends HttpServlet {
                 ps.setString(4, problem);
 
                 int rowsInserted = ps.executeUpdate();
-                if (rowsInserted > 0) {
-                    response.getWriter().println("We have received the data, and we will try to help.");
-                } else {
-                    response.getWriter().println("Failed to save data.");
-                }
+                response.getWriter().println(rowsInserted > 0
+                        ? "We have received the data, and we will try to help."
+                        : "Failed to save data.");
             }
 
         } catch (SQLException e) {
@@ -65,10 +61,6 @@ public class Database extends HttpServlet {
 
     @Override
     public void destroy() {
-        try {
-            if (conn != null) conn.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        try { if (conn != null) conn.close(); } catch (SQLException e) { e.printStackTrace(); }
     }
 }
