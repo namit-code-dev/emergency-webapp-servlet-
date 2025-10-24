@@ -7,19 +7,19 @@ WORKDIR /usr/local/tomcat
 # Remove default Tomcat apps
 RUN rm -rf webapps/*
 
-# Copy frontend files (HTML, CSS, JS)
-COPY src/webapp/ webapps/ROOT/
+# Copy your webapp (HTML, JSP, WEB-INF, etc.)
+COPY webapp/ webapps/ROOT/
 
 # Copy servlet source files
 COPY src/main/java/ webapps/ROOT/WEB-INF/src/
 
-# Compile servlets inside container
-RUN find webapps/ROOT/WEB-INF/src -name "*.java" -print0 \
-    | xargs -0 javac -d webapps/ROOT/WEB-INF/classes -cp lib/servlet-api.jar
+# Compile Java servlet files inside container
+RUN javac -cp "lib/servlet-api.jar" \
+    -d webapps/ROOT/WEB-INF/classes \
+    $(find webapps/ROOT/WEB-INF/src -name "*.java")
 
-# Expose port
+# Expose default Tomcat port
 EXPOSE 8080
 
 # Start Tomcat
 CMD ["catalina.sh", "run"]
-
