@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Helplines India</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="menu">
+<div id="home">
+ <a href="index.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
+  <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
+  <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"/>
+</svg></a></div>
+<div id=about>
+ <a href="about.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+  <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+</svg></a></div>
+<div id=safety-instruction>
+ <a href="safe.html">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-safe" viewBox="0 0 16 16">
+  <path d="M1 1.5A1.5 1.5 0 0 1 2.5 0h12A1.5 1.5 0 0 1 16 1.5v13a1.5 1.5 0 0 1-1.5 1.5h-12A1.5 1.5 0 0 1 1 14.5V13H.5a.5.5 0 0 1 0-1H1V8.5H.5a.5.5 0 0 1 0-1H1V4H.5a.5.5 0 0 1 0-1H1zM2.5 1a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 .5.5h12a.5.5 0 0 0 .5-.5v-13a.5.5 0 0 0-.5-.5z"/>
+  <path d="M13.5 6a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5M4.828 4.464a.5.5 0 0 1 .708 0l1.09 1.09a3 3 0 0 1 3.476 0l1.09-1.09a.5.5 0 1 1 .707.708l-1.09 1.09c.74 1.037.74 2.44 0 3.476l1.09 1.09a.5.5 0 1 1-.707.708l-1.09-1.09a3 3 0 0 1-3.476 0l-1.09 1.09a.5.5 0 1 1-.708-.708l1.09-1.09a3 3 0 0 1 0-3.476l-1.09-1.09a.5.5 0 0 1 0-.708M6.95 6.586a2 2 0 1 0 2.828 2.828A2 2 0 0 0 6.95 6.586"/>
+</svg></a></div>
+<div id="logout">
+ <a href="index.html">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"/>
+  <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+</svg></a></div>
+</div>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🚨 Emergency Helplines</h1>
+            <p>Quick access to all emergency services in India</p>
+        </header>
+
+        <!-- Primary Emergency Services -->
+        <main>
+            <section class="section">
+                <h2 class="section-title primary-title">
+                    🚨 Primary Emergency Services
+                </h2>
+                <div class="grid grid-4">
+                    <!-- All-in-one Emergency -->
+                    <div class="emergency-card primary-card all-emergency">
+                        <span class="icon">🆘</span>
+                        <h3>All Emergency</h3>
+                        <p>Police, Fire, Ambulance</p>
+                        <button onclick="makeCall('112')" class="call-btn pulse">
+                            📞 112
+                        </button>
+                    </div>
+
+                    <!-- Police -->
+                    <div class="emergency-card primary-card police-card">
+                        <span class="icon">👮‍♂️</span>
+                        <h3>Police</h3>
+                        <p>Crime & Safety</p>
+                        <button onclick="makeCall('100')" class="call-btn">
+                            📞 100
+                        </button>
+                    </div>
+
+                    <!-- Ambulance -->
+                    <div class="emergency-card primary-card ambulance-card">
+                        <span class="icon">🚑</span>
+                        <h3>Ambulance</h3>
+                        <p>Medical Emergency</p>
+                        <button onclick="makeCall('108')" class="call-btn">
+                            📞 108
+                        </button>
+                    </div>
+
+                    <!-- Fire Brigade -->
+                    <div class="emergency-card primary-card fire-card">
+                        <span class="icon">🚒</span>
+                        <h3>Fire Brigade</h3>
+                        <p>Fire & Rescue</p>
+                        <button onclick="makeCall('101')" class="call-btn">
+                            📞 101
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Disaster Management -->
+            <section class="section">
+                <h2 class="section-title disaster-title">
+                    🌪️ Disaster Management & Public Help
+                </h2>
+                <div class="grid grid-3">
+                    <div class="emergency-card secondary-card disaster-border">
+                        <div class="card-content">
+                            <div class="card-info">
+                                <h3>NDMA</h3>
+                                <p>National Disaster Management</p>
+                            </div>
+                            <button onclick="makeCall('1078')" class="secondary-btn disaster-btn">
+                                📞 1078
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="emergency-card secondary-card disaster-border">
+                        <div class="card-content">
+                            <div class="card-info">
+                                <h3>Disaster Control Room</h3>
+                                <p>Emergency Control</p>
+                            </div>
+                            <button onclick="makeCall('1070')" class="secondary-btn disaster-btn">
+                                📞 1070
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="emergency-card secondary-card disaster-border">
+                        <div class="card-content">
+                            <div class="card-info">
+                                <h3>NDMA Delhi</h3>
+                                <p>011-26701728</p>
+                            </div>
+                            <button onclick="makeCall('01126701728')" class="secondary-btn disaster-btn">
+                                📞 Call
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Special Helplines -->
+            <section class="section">
+                <h2 class="section-title special-title">
+                    🤝 Special Helplines
+                </h2>
+                <div class="grid grid-2">
+                    <div class="emergency-card icon-card special-border">
+                        <div class="icon-content">
+                            <div class="icon-left">
+                                <span class="emoji">👩</span>
+                                <div class="card-info">
+                                    <h3>Women Helpline</h3>
+                                    <p>24/7 Support</p>
+                                </div>
+                            </div>
+                            <button onclick="makeCall('1091')" class="secondary-btn special-btn">
+                                📞 1091
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="emergency-card icon-card special-border">
+                        <div class="icon-content">
+                            <div class="icon-left">
+                                <span class="emoji">👶</span>
+                                <div class="card-info">
+                                    <h3>Child Helpline</h3>
+                                    <p>Child Protection</p>
+                                </div>
+                            </div>
+                            <button onclick="makeCall('1098')" class="secondary-btn special-btn">
+                                📞 1098
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="emergency-card icon-card special-border">
+                        <div class="icon-content">
+                            <div class="icon-left">
+                                <span class="emoji">👴</span>
+                                <div class="card-info">
+                                    <h3>Senior Citizens</h3>
+                                    <p>Elderly Support</p>
+                                </div>
+                            </div>
+                            <button onclick="makeCall('14567')" class="secondary-btn special-btn">
+                                📞 14567
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="emergency-card icon-card special-border">
+                        <div class="icon-content">
+                            <div class="icon-left">
+                                <span class="emoji">🧳</span>
+                                <div class="card-info">
+                                    <h3>Tourist Helpline</h3>
+                                    <p>Travel Assistance</p>
+                                </div>
+                            </div>
+                            <button onclick="makeCall('1363')" class="secondary-btn special-btn">
+                                📞 1363
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Medical & Health Services -->
+            <section class="section">
+                <h2 class="section-title medical-title">
+                    🏥 Medical & Health Services
+                </h2>
+                <div class="grid grid-3">
+                    <div class="emergency-card medical-card">
+                        <span class="emoji">☠️</span>
+                        <h3>Poison Control</h3>
+                        <p>Emergency Poison Help</p>
+                        <button onclick="makeCall('1066')" class="call-btn">
+                            📞 1066
+                        </button>
+                    </div>
+
+                    <div class="emergency-card medical-card">
+                        <span class="emoji">🩺</span>
+                        <h3>Medical Emergency</h3>
+                        <p>Alternative Medical Help</p>
+                        <button onclick="makeCall('102')" class="call-btn">
+                            📞 102
+                        </button>
+                    </div>
+
+                    <div class="emergency-card medical-card">
+                        <span class="emoji">🧠</span>
+                        <h3>Mental Health</h3>
+                        <p>Psychological Support</p>
+                        <button onclick="makeCall('9152987821')" class="call-btn">
+                            📞 Call
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Transport & Traffic -->
+            <section class="section">
+                <h2 class="section-title transport-title">
+                    🚗 Transport & Traffic Services
+                </h2>
+                <div class="grid grid-3">
+                    <div class="emergency-card transport-card">
+                        <span class="emoji">🚔</span>
+                        <h3>Traffic Police</h3>
+                        <p>Road Safety & Traffic</p>
+                        <button onclick="makeCall('103')" class="call-btn">
+                            📞 103
+                        </button>
+                    </div>
+
+                    <div class="emergency-card transport-card">
+                        <span class="emoji">🚂</span>
+                        <h3>Railway Enquiry</h3>
+                        <p>Train Information</p>
+                        <button onclick="makeCall('139')" class="call-btn">
+                            📞 139
+                        </button>
+                    </div>
+
+                    <div class="emergency-card transport-card">
+                        <span class="emoji">✈️</span>
+                        <h3>Airport Authority</h3>
+                        <p>Flight Information</p>
+                             <button onclick="makeCall('+91 22 66851010')" class="call-btn">
+                            📞 +91 22 66851010
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Utility Services -->
+            <section class="section">
+                <h2 class="section-title utility-title">
+                    ⚡ Utility & Public Services
+                </h2>
+                <div class="grid grid-3">
+                    <div class="emergency-card utility-card">
+                        <span class="emoji">💡</span>
+                        <h3>Electricity Board</h3>
+                        <p>Power Supply Issues</p>
+                            <button onclick="makeCall('9819084984')" class="call-btn">
+                            📞 9819084984
+                        </button>
+                    </div>
+
+                    <div class="emergency-card utility-card">
+                        <span class="emoji">💧</span>
+                        <h3>Water Supply</h3>
+                        <p>Water Related Issues</p>
+                         <button onclick="makeCall('9819084984')" class="call-btn">
+                            📞 9819084984
+                        </button>
+                    </div>
+
+                    <div class="emergency-card utility-card">
+                        <span class="emoji">🔥</span>
+                        <h3>Gas Emergency</h3>
+                        <p>Gas Leak & Safety</p>
+                        <button onclick="makeCall('1906')" class="call-btn">
+                            📞 1906
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Government Services -->
+            <section class="section">
+                <h2 class="section-title govt-title">
+                    🏛️ Government Services
+                </h2>
+                <div class="grid grid-3">
+                    <div class="emergency-card govt-card">
+                        <span class="emoji">🏛️</span>
+                        <h3>BMC Office</h3>
+                        <p>Municipal Services</p>
+                           <button onclick="makeCall('9819084984')" class="call-btn">
+                            📞 9819084984
+                        </button>
+                    </div>
+
+                    <div class="emergency-card govt-card">
+                        <span class="emoji">👨‍💼</span>
+                        <h3>MLA Office</h3>
+                        <p>Legislative Assembly</p>
+                        <button onclick="makeCall('9819084984')" class="call-btn">
+                            📞 9819084984
+                        </button>
+                    </div>
+
+                    <div class="emergency-card govt-card">
+                        <span class="emoji">🏢</span>
+                        <h3>Collector Office</h3>
+                        <p>District Administration</p>
+                        <button onclick="makeCall('9819084984')" class="call-btn">
+                            📞 9819084984
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Banking & Financial -->
+            <section class="section">
+                <h2 class="section-title banking-title">
+                    🏦 Banking & Financial Services
+                </h2>
+                <div class="grid grid-3">
+                    <div class="emergency-card banking-card">
+                        <span class="emoji">💳</span>
+                        <h3>Banking Ombudsman</h3>
+                        <p>Banking Complaints</p>
+                        <button onclick="makeCall('14448')" class="call-btn">
+                            📞 14448
+                        </button>
+                    </div>
+
+                    <div class="emergency-card banking-card">
+                        <span class="emoji">🚫</span>
+                        <h3>Credit Card Block</h3>
+                        <p>Lost/Stolen Cards</p>
+                        <button onclick="showContactInfo('14448')" class="call-btn">
+                            📞 14448
+                        </button>
+                    </div>
+
+                    <div class="emergency-card banking-card">
+                        <span class="emoji">📱</span>
+                        <h3>Cyber Crime</h3>
+                        <p>Online Fraud Report</p>
+                        <button onclick="makeCall('1930')" class="call-btn">
+                            📞 1930
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="highlight">🚨 In case of emergency, stay calm and call the appropriate number</p>
+            <p class="small">This app works offline once loaded. Bookmark for quick access.</p>
+        </footer>
+    </div>
+
+    <!-- Modal for contact info -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <h3 id="modalTitle"></h3>
+            <p id="modalContent"></p>
+            <button onclick="closeModal()" class="close-btn">
+                Close
+            </button>
+        </div>
+    </div>
+        <script src="script.js"></script>
+    </body>
+
+</html>

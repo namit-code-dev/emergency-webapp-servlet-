@@ -1,0 +1,25 @@
+# Use Tomcat 9 with Java 17
+FROM tomcat:9.0-jdk17-temurin
+
+# Set working directory
+WORKDIR /usr/local/tomcat
+
+# Remove default Tomcat apps
+RUN rm -rf webapps/*
+
+# Copy frontend files (HTML, CSS, JS)
+COPY src/webapp/ webapps/ROOT/
+
+# Copy servlet source files
+COPY src/main/java/ webapps/ROOT/WEB-INF/src/
+
+# Compile servlets inside container
+RUN find webapps/ROOT/WEB-INF/src -name "*.java" -print0 \
+    | xargs -0 javac -d webapps/ROOT/WEB-INF/classes -cp lib/servlet-api.jar
+
+# Expose port
+EXPOSE 8080
+
+# Start Tomcat
+CMD ["catalina.sh", "run"]
+

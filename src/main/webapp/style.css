@@ -1,0 +1,459 @@
+@charset "ISO-8859-1";
+
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fef2f2 0%, #eff6ff 100%);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        .menu{
+        display:flex;
+        align-item:center;
+        justify-content:center;
+        background-color:#c0c0c0;
+        border-radius:5px;
+        margin:5px;
+        gap:30px;
+        height:70px;
+        }
+          .menu > div>a>svg:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    color:white;
+    transition: transform 0.2s;
+}
+
+        
+     .menu > div>a>svg {
+    height: 30px; 
+    width: 30px;
+    color:black;
+    fill: black;
+    padding-top:15px;
+}
+
+
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #6b7280;
+            font-size: 1.1rem;
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .primary-title { color: #dc2626; }
+        .disaster-title { color: #7c3aed; }
+        .special-title { color: #db2777; }
+        .medical-title { color: #059669; }
+        .transport-title { color: #d97706; }
+        .utility-title { color: #7c2d12; }
+        .govt-title { color: #4338ca; }
+        .banking-title { color: #be185d; }
+
+        /* Grid Layouts */
+        .grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .grid-4 {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        }
+
+        /* Emergency Card Styles */
+        .emergency-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .emergency-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        /* Primary Emergency Cards */
+        .primary-card {
+            padding: 30px;
+            text-align: center;
+            color: white;
+        }
+
+        .all-emergency { background: linear-gradient(135deg, #dc2626, #ef4444); }
+        .police-card { background: linear-gradient(135deg, #2563eb, #3b82f6); }
+        .ambulance-card { background: linear-gradient(135deg, #16a34a, #22c55e); }
+        .fire-card { background: linear-gradient(135deg, #ea580c, #f97316); }
+
+        .primary-card .icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .primary-card h3 {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .primary-card p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        /* Call Buttons */
+        .call-btn {
+            background: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            width: 100%;
+        }
+
+        .call-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .all-emergency .call-btn { color: #dc2626; }
+        .police-card .call-btn { color: #2563eb; }
+        .ambulance-card .call-btn { color: #16a34a; }
+        .fire-card .call-btn { color: #ea580c; }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        /* Secondary Cards */
+        .secondary-card {
+            padding: 20px;
+            background: white;
+            border-left: 4px solid;
+        }
+
+        .disaster-border { border-left-color: #7c3aed; }
+        .special-border { border-left-color: #db2777; }
+        .medical-border { border-left-color: #059669; }
+        .transport-border { border-left-color: #d97706; }
+        .utility-border { border-left-color: #7c2d12; }
+        .govt-border { border-left-color: #4338ca; }
+        .banking-border { border-left-color: #be185d; }
+
+        .card-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-info h3 {
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 5px;
+        }
+
+        .card-info p {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        .secondary-btn {
+            background: #7c3aed;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .secondary-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .disaster-btn { background: #7c3aed; }
+        .special-btn { background: #db2777; }
+        .medical-btn { background: #059669; }
+        .transport-btn { background: #d97706; }
+        .utility-btn { background: #7c2d12; }
+        .govt-btn { background: #4338ca; }
+        .banking-btn { background: #be185d; }
+
+        /* Special Cards with Icons */
+        .icon-card {
+            padding: 20px;
+            background: white;
+            border-left: 4px solid;
+        }
+
+        .icon-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .icon-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .icon-left .emoji {
+            font-size: 2rem;
+            margin-right: 15px;
+        }
+
+        /* Service Cards */
+        .medical-card, .transport-card, .utility-card, .govt-card, .banking-card {
+            padding: 25px;
+            text-align: center;
+            background: white;
+        }
+
+        .medical-card { border-left: 4px solid #059669; }
+        .transport-card { border-left: 4px solid #d97706; }
+        .utility-card { border-left: 4px solid #7c2d12; }
+        .govt-card { border-left: 4px solid #4338ca; }
+        .banking-card { border-left: 4px solid #be185d; }
+
+        .medical-card .emoji, .transport-card .emoji, .utility-card .emoji, 
+        .govt-card .emoji, .banking-card .emoji {
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .medical-card h3, .transport-card h3, .utility-card h3, 
+        .govt-card h3, .banking-card h3 {
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 5px;
+        }
+
+        .medical-card p, .transport-card p, .utility-card p, 
+        .govt-card p, .banking-card p {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .medical-card .call-btn { background: #059669; color: white; padding: 12px 20px; }
+        .transport-card .call-btn { background: #d97706; color: white; padding: 12px 20px; }
+        .utility-card .call-btn { background: #7c2d12; color: white; padding: 12px 20px; }
+        .govt-card .call-btn { background: #4338ca; color: white; padding: 12px 20px; }
+        .banking-card .call-btn { background: #be185d; color: white; padding: 12px 20px; }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .footer p {
+            color: #6b7280;
+            margin-bottom: 10px;
+        }
+
+        .footer .highlight {
+            font-weight: bold;
+        }
+
+        .footer .small {
+            font-size: 0.9rem;
+            color: #9ca3af;
+        }
+
+        /* Modal Styles */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            max-width: 400px;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .modal-content .icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .modal-content h3 {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1f2937;
+        }
+
+        .modal-content p {
+            color: #6b7280;
+            margin-bottom: 25px;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .modal-btn {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .cancel-btn {
+            background: #6b7280;
+            color: white;
+        }
+
+        .call-now-btn {
+            background: #16a34a;
+            color: white;
+        }
+
+        .modal-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .close-btn {
+            background: #6b7280;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .primary-card {
+                padding: 20px;
+            }
+
+            .grid-4, .grid-3, .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .card-content {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .icon-content {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .modal-buttons {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .primary-card .icon {
+                font-size: 2.5rem;
+            }
+
+            .call-btn {
+                font-size: 1rem;
+                padding: 12px 20px;
+            }
+        }
+    
