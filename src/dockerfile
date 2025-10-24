@@ -6,11 +6,11 @@ WORKDIR /usr/local/tomcat
 # Remove default apps
 RUN rm -rf webapps/*
 
-# Copy full webapp folder from your project root
-COPY ./webapp/ ./webapps/ROOT/
+# Copy your actual webapp folder
+COPY ./src/main/webapp/ ./webapps/ROOT/
 
-# Copy compiled classes
-COPY ./build/classes/ ./WEB-INF/classes/
+# Copy compiled classes (from your build output)
+COPY ./build/classes/myapp/ ./webapps/ROOT/WEB-INF/classes/myapp/
 
 # Expose port
 EXPOSE 8080
