@@ -18,7 +18,7 @@ public class Database extends HttpServlet {
             Class.forName("org.sqlite.JDBC");
 
             // Get absolute path to emergency.db inside build/classes/myapp
-            String dbPath = getServletContext().getRealPath("/build/classes/myapp/emergency.db");
+            String dbPath = getServletContext().getRealPath("/WEB-INF/db/emergency.db");
 
             // Connect to SQLite
             conn = DriverManager.getConnection("jdbc:sqlite:" + dbPath);
@@ -66,4 +66,5 @@ public class Database extends HttpServlet {
         }
     }
 }
+
 
