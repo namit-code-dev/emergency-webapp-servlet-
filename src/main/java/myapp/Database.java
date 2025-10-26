@@ -1,5 +1,6 @@
 package myapp;
 
+import java.io.IOException;
 import java.sql.*;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,28 +13,25 @@ public class Database extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        super.init();
         try {
+            // Load SQLite driver
             Class.forName("org.sqlite.JDBC");
 
-            // Read DB path from environment variable
-            String dbPath = System.getenv("DB_PATH");
-            if (dbPath == null || dbPath.isEmpty()) {
-                throw new ServletException("Environment variable DB_PATH is not set!");
-            }
+            // Get absolute path to emergency.db inside build/classes/myapp
+            String dbPath = getServletContext().getRealPath("/WEB-INF/classes/myapp/emergency.db");
 
+            // Connect to SQLite
             conn = DriverManager.getConnection("jdbc:sqlite:" + dbPath);
-            System.out.println("Connected to SQLite successfully via ENV variable: " + dbPath);
-
+            System.out.println("Connected to SQLite successfully! Path: " + dbPath);
         } catch (Exception e) {
             e.printStackTrace();
-            throw new ServletException("DB connection failed: " + e.getMessage(), e);
+            throw new ServletException("DB connection failed: " + e.getMessage());
         }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, java.io.IOException {
+            throws ServletException, IOException {
         try {
             String name = request.getParameter("name");
             String contact = request.getParameter("contact");
@@ -41,18 +39,18 @@ public class Database extends HttpServlet {
             String problem = request.getParameter("problem");
 
             String sql = "INSERT INTO reports(name, contact, area, problem) VALUES(?, ?, ?, ?)";
-            try (PreparedStatement ps = conn.prepareStatement(sql)) {
-                ps.setString(1, name);
-                ps.setString(2, contact);
-                ps.setString(3, area);
-                ps.setString(4, problem);
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, name);
+            ps.setString(2, contact);
+            ps.setString(3, area);
+            ps.setString(4, problem);
 
-                int rowsInserted = ps.executeUpdate();
-                response.getWriter().println(rowsInserted > 0
-                        ? "We have received the data, and we will try to help."
-                        : "Failed to save data.");
+            int rowsInserted = ps.executeUpdate();
+            if (rowsInserted > 0) {
+                response.getWriter().println("We have received the data and we will try to help.");
+            } else {
+                response.getWriter().println("Failed to save data.");
             }
-
         } catch (SQLException e) {
             e.printStackTrace();
             response.getWriter().println("Error: " + e.getMessage());
@@ -61,6 +59,10 @@ public class Database extends HttpServlet {
 
     @Override
     public void destroy() {
-        try { if (conn != null) conn.close(); } catch (SQLException e) { e.printStackTrace(); }
+        try {
+            if (conn != null) conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
